@@ -3,96 +3,236 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mudit Dhawane- Resume</title>
+  <title>Mudit Dhawane - Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #f0f6ff;
+    :root {
+  --primary: #1f2937; /* Dark Gray */
+  --secondary: #6366f1; /* Indigo */
+  --accent: #10b981; /* Emerald */
+  --background: linear-gradient(to right, #f0f4f8, #e2e8f0);
+  --text-dark: #111827;
+  --text-light: #ffffff;
+  --hobby-bg: #e0f2f1;
+  --contact-bg: #ede9fe;
+  --portfolio-bg: #f9fafb;
+}
+
+    * {
       margin: 0;
       padding: 0;
-      color: #1c1c1c;
+      box-sizing: border-box;
     }
+
+    body {
+  font-family: 'Poppins', sans-serif;
+  background: 
+    linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.92)),
+    url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1350&q=80');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+    header {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: var(--text-light);
+  text-align: center;
+  padding: 3rem 1rem 2rem;
+  position: relative;
+  clip-path: ellipse(100% 100% at 50% 0%);
+    }
+
+    header img.logo {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 70px;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 0.3rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.95;
+    }
+
     .resume-container {
-      max-width: 900px;
-      margin: 40px auto;
-      background: #b5cfff;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
-      border-radius: 10px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: row;
-    }
-    .left {
-      width: 35%;
-      background: #021dea;
-      color: white;
-      padding: 30px 20px;
-      text-align: center;
-    }
-    .left img {
-      width: 150px;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 4px solid white;
-      margin-bottom: 20px;
-    }
-    .left h2 {
-      margin: 10px 0 5px;
-    }
-    .left p {
-      margin: 5px 0;
-      font-size: 14px;
-    }
-    .section-title {
-      margin-top: 30px;
-      font-size: 18px;
-      border-bottom: 2px solid rgb(255, 255, 174);
-      display: inline-block;
-      padding-bottom: 4px;
-    }
-    .right {
-      width: 65%;
-      padding: 30px 40px;
-    }
-    .right h1 {
-      font-size: 30px;
-      margin-bottom: 5px;
-      color: #0077cc;
-    }
-    .right h3 {
-      margin-top: 25px;
-      color: #333;
-    }
-    .right ul {
-      padding-left: 20px;
-      font-size: 15px;
-    }
-    .right p {
-      font-size: 15px;
-      margin: 8px 0;
-    }
-    .skills, .languages {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
+      max-width: 1200px;
+      margin: 4rem auto;
+      padding: 0 1rem;
+      gap: 2rem;
     }
-    .tag {
-      background: #004bcc;
-      color: white;
-      padding: 5px 10px;
+
+    .left, .right {
+      background: var(--text-light);
       border-radius: 15px;
-      font-size: 13px;
+      padding: 2rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease;
     }
+
+    .left:hover, .right:hover {
+      transform: translateY(-5px);
+    }
+
+    .left {
+      flex: 1 1 30%;
+      background: #fdfdfd;
+      text-align: center;
+    }
+
+    .left img.profile {
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 5px solid var(--secondary);
+      margin-bottom: 1rem;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .section-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--accent);
+      border-bottom: 2px solid var(--accent);
+      margin: 2rem 0 1rem;
+      display: inline-block;
+    }
+
+    .right {
+      flex: 1 1 65%;
+    }
+
+    .right h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+
+    .right ul {
+      padding-left: 1.2rem;
+    }
+
+    .right p, .right ul li {
+      font-size: 1rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .tag {
+      background: var(--secondary);
+      color: var(--text-light);
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      transition: background 0.3s ease;
+    }
+
+    .tag:hover {
+      background: var(--accent);
+    }
+
+    .hobbies-section {
+      background: var(--hobby-bg);
+      padding: 1.2rem;
+      border-radius: 12px;
+      text-align: left;
+      color: var(--primary);
+      box-shadow: inset 0 0 8px rgba(0,0,0,0.05);
+    }
+
+    .hobbies-section p {
+      margin: 0.6rem 0;
+    }
+
+    .contact-section {
+      background: var(--contact-bg);
+      padding: 3rem 1rem;
+      margin-top: 2rem;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+      text-align: center;
+      border-radius: 20px;
+    }
+
+    .contact-section h2 {
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+    }
+
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    input, textarea {
+      padding: 0.75rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      transition: border-color 0.3s ease;
+    }
+
+    input:focus, textarea:focus {
+      border-color: var(--accent);
+      outline: none;
+    }
+
+    button {
+      background: var(--accent);
+      color: var(--text-light);
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: var(--secondary);
+    }
+
+    footer {
+  background: var(--primary);
+  color: var(--text-light);
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.95rem;
+}
   </style>
 </head>
 <body>
+  <header>
+    <img src="images.png" alt="IIMB Logo" class="logo">
+    <h1>Mudit Dhawane</h1>
+    <p>Digital Marketing Specialist</p>
+  </header>
 
   <div class="resume-container">
     <div class="left">
-      <img src="mudit.jpg" alt="Profile Photo" />
-      <h2>Mudit Dhawane</h2>
-      <p>Digital Marketing Specialist</p>
+      <img src="mudit.jpg" alt="Profile Photo" class="profile" />
 
       <div class="section-title">Contact</div>
       <p>📧 mudit18818@gmai.com</p>
@@ -103,16 +243,21 @@
       <p>Marathi (Basic)</p>
 
       <div class="section-title">Hobbies</div>
-      <p>⚽ Football</p>
-      <p>🎵 Music</p>
-      <p>🌍 Travel</p>
+      <div class="hobbies-section">
+        <p>⚽ I'm passionate about football and enjoy watching and playing matches during weekends.</p>
+        <p>🎵 Music helps me focus and unwind. I explore various genres, especially instrumental and lo-fi.</p>
+        <p>🌍 Traveling excites me—I love discovering new places, cultures, and cuisines.</p>
+        <p>🖌️ I enjoy editing and creating visuals using apps like Canva and Photoshop.</p>
+        <p>🎬 I love editing videos to tell compelling stories or document experiences.</p>
+        <p>🏋️ Gymming is a major part of my daily routine—fitness fuels my productivity.</p>
+      </div>
     </div>
 
     <div class="right">
-      <h1>About Me</h1>
-      <p>Creative and performance-driven Digital Marketing Specialist with a passion for building powerful brand narratives and driving impactful online presence. Skilled in social media strategy, content creation, and visual storytelling. Thrives at the intersection of creativity and data, consistently delivering high-quality campaigns that resonate with target audiences.</p>
+      <h2>About Me</h2>
+      <p>Creative and performance-driven Digital Marketing Specialist with a passion for building powerful brand narratives and driving impactful online presence. Skilled in social media strategy, content creation, and visual storytelling.</p>
 
-      <h3>Education</h3>
+      <h2>Education</h2>
       <ul>
         <li><strong>BBA</strong> - Indian Institute of Management, Bangalore (Ongoing)</li>
         <li><strong>12th PCM</strong> - St. Vincent Pallotti School
@@ -125,7 +270,7 @@
         </li>
       </ul>
 
-      <h3>Experience</h3>
+      <h2>Experience</h2>
       <p><strong>Digital Marketing – Kaatyayani Solar</strong></p>
       <ul>
         <li>Crafted digital strategies for brand awareness and engagement</li>
@@ -135,7 +280,7 @@
         <li>Designed visuals & videos for online posts</li>
       </ul>
 
-      <h3>Skills</h3>
+      <h2>Skills</h2>
       <div class="skills">
         <div class="tag">Social Media Campaigns</div>
         <div class="tag">Canva</div>
@@ -148,9 +293,17 @@
         <div class="tag">Performance Reporting</div>
         <div class="tag">Detail-Oriented</div>
       </div>
-
     </div>
   </div>
 
+  <section class="contact-section">
+    <h2>Contact Me</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
 </body>
 </html>
